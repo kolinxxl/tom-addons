@@ -1,0 +1,20 @@
+# https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
+name: TOM Reader add-on
+version: "1.2.0"
+slug: tom-reader
+description: TOM Reader, aka TopolWater DCOV controler integration add-on
+url: "https://github.com/home-assistant/tom-addons/tree/main/tom-reader"
+arch:
+  - armhf
+  - armv7
+  - aarch64
+  - amd64
+  - i386
+init: false
+map:
+  - share:rw
+options:
+  message: "Hello from TOM Reader (options: in cofig.yaml) ..."
+schema:
+  message: "str?"
+image: "ghcr.io/home-assistant/{arch}-tom-reader"
