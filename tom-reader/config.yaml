@@ -2,19 +2,23 @@
 name: TOM Reader add-on
 version: "1.2.0"
 slug: tom-reader
-description: TOM Reader, aka TopolWater DCOV controler integration add-on
+description: "Čte data z TopolWater a posílá je do Home Assistantu"
 url: "https://github.com/home-assistant/tom-addons/tree/main/tom-reader"
 arch:
-  - armhf
-  - armv7
   - aarch64
   - amd64
   - i386
 init: false
+boot: "auto"
+host_network: true  # umožní přímou komunikaci s lokální sítí
+privileged:
+  - NET_ADMIN
 map:
   - share:rw
 options:
   message: "Hello from TOM Reader (options: in cofig.yaml) ..."
+  interval: 30
 schema:
   message: "str?"
-image: "ghcr.io/home-assistant/{arch}-tom-reader"
+  interval: int
+# image: "ghcr.io/home-assistant/{arch}-tom-reader"
